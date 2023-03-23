@@ -67,7 +67,10 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.only(bottom: 10),
                 child: Text(
                   "Saiba qual a melhor opção para abastecer o seu carro",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               TextField(
@@ -96,7 +99,10 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(top: 20),
                 child: Text(
                   _textoResultado,
-                  style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
