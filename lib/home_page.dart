@@ -52,61 +52,59 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Álcool ou Gasolina"),
         backgroundColor: Colors.blue,
       ),
-      body: Container(
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(32),
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 32),
-                child: Image.asset("assets/images/logo.png"),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(bottom: 10),
-                child: Text(
-                  "Saiba qual a melhor opção para abastecer o seu carro",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 32),
+              child: Image.asset("assets/images/logo.png"),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 10),
+              child: Text(
+                "Saiba qual a melhor opção para abastecer o seu carro",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              TextField(
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(labelText: "Preço Álcool, ex: 4.39"),
-                style: const TextStyle(fontSize: 22),
-                controller: _controllerAlcool,
-              ),
-              TextField(
-                keyboardType: TextInputType.number,
-                decoration: const InputDecoration(labelText: "Preço Gasolina, ex: 5.64"),
-                style: const TextStyle(fontSize: 22),
-                controller: _controllerGasolina,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: ElevatedButton(
-                  onPressed: _calcular,
-                  child: const Text(
-                    "Calcular",
-                    style: TextStyle(fontSize: 20),
-                  ),
+            ),
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(labelText: "Preço Álcool, ex: 4.39"),
+              style: const TextStyle(fontSize: 22),
+              controller: _controllerAlcool,
+            ),
+            TextField(
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(labelText: "Preço Gasolina, ex: 5.64"),
+              style: const TextStyle(fontSize: 22),
+              controller: _controllerGasolina,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: ElevatedButton(
+                onPressed: _calcular,
+                child: const Text(
+                  "Calcular",
+                  style: TextStyle(fontSize: 20),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Text(
-                  _textoResultado,
-                  style: const TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Text(
+                _textoResultado,
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
